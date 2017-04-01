@@ -13,7 +13,7 @@ class BlogsController < ApplicationController
       @blog = Blog.new
     end
   end
-  
+
   def edit
   end
   
