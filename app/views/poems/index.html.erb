@@ -1,4 +1,12 @@
-<%= @poems.each do |poem| %>
-  <%= poem.title %>
-  <%= poem.content %>
-<% end %>
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <h1>ポエム一覧  [from api server]</h1>
+    <%= @poems.each do |poem| %>
+      <div class="row">
+        <p>ポエムのタイトル：<%= poem.title %></p>
+        <p>ポエムの内容：<%= poem.content %></p>
+        <%= link_to "編集", poem_path(poem.id), class: 'btn btn-default btn-sm btn-success' %>
+      </div>
+    <% end %>
+  </div>
+</div>
