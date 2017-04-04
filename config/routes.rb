@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :poems, only: [:index]
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "letteropener"
   end
