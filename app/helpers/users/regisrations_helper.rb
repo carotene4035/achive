@@ -1,0 +1,2 @@
+module Users::RegisrationsHelper
+end
