@@ -1,4 +1,4 @@
-class Users::RegisrationsController < Devise::RegistrationsController
+class Users::RegistrationsController < Devise::RegistrationsController
   def build_resource(hash=nil)
     hash[:uid] = User.create_unique_string
     super
