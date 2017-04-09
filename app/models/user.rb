@@ -48,4 +48,14 @@ class User < ActiveRecord::Base
   def self.create_unique_string
     SecureRandom.uuid
   end
+
+  # 上位クラスで定められたmethodをオーバーライド
+  def update_with_password(params, *options)
+    if provider.black?
+      super
+    else
+      params.delete :current_password
+      update_without_password(params, *options)
+    end
+  end
 end
