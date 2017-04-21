@@ -13,7 +13,10 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
-  resources :blogs, only: [:index, :new, :edit, :destroy, :update, :create] do
+
+  resources :blogs do
+    resources :comments
+    post :confirm, on: :collection
     collection do
       post :confirm
     end
