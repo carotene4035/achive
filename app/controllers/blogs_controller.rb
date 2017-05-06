@@ -1,10 +1,18 @@
 class BlogsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_blog, only: [:edit, :update, :destroy]
+  before_action :set_blog, only: [:edit, :update, :destroy, :show]
   # 表示用メソッド
   def index
     @blogs = Blog.all
   end
+  
+  def show
+    # 入力フォーム用
+    @comment = @blog.comments.build
+    # 一覧用
+    @comments = @blog.comments
+  end
+
   
   def new
     if params[:back]
