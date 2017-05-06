@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
+  resources :users, only: [:index]
+
   root 'top#index'
   
   resources :contacts, only: [:new, :create] do
