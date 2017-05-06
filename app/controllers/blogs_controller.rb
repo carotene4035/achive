@@ -55,7 +55,6 @@ class BlogsController < ApplicationController
   def confirm
     @blog = Blog.new(blogs_params)
     render :new if @blog.invalid?
-    
   end
  
  private
