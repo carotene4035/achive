@@ -1,0 +1,13 @@
+<div class="container">
+  
+  <div class="row">
+    <h2><%= @user.name %>さんがフォローしているユーザー</h2>
+    <%= render partial: 'users/follow_data', locals: {users: @user.followed_users} %>
+  </div>
+
+  <div class="row">
+    <h2><%= @user.name %>さんをフォローしているユーザー</h2>
+    <%= render partial: 'users/follow_data', locals: {users: @user.followers} %>
+  </div>
+</div>
+
