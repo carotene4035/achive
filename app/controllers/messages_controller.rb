@@ -10,6 +10,7 @@ class MessagesController < ApplicationController
       @messages = @messages[-10..-1]
     end
 
+    # 全部表示
     if params[:m]
       @over_ten = false
       @messages = @conversation.messages
