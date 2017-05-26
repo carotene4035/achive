@@ -40,6 +40,7 @@ class BlogsController < ApplicationController
   def update
     if @blog.update(blogs_params)
       redirect_to blogs_path, notice: "ブログを編集しました!"
+      raise
     else
       render 'edit'
     end
