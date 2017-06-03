@@ -53,7 +53,6 @@ group :development do
   gem 'dotenv-rails'
 end
 
-gem 'twitter-bootstrap-rails'
 gem 'jquery-turbolinks'
 
 gem 'rails_12factor', group: :production
@@ -72,3 +71,5 @@ gem 'carrierwave'
 gem 'rmagick'
 
 gem 'pusher'
+
+gem 'fog'
