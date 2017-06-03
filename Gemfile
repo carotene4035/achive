@@ -46,6 +46,12 @@ group :development, :test do
   gem 'pry-doc'    # methodを表示
   gem 'pry-byebug' # デバッグを実施(Ruby 2.0以降で動作する)
   gem 'pry-stack_explorer' # スタックをたどれる
+
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -73,3 +79,8 @@ gem 'rmagick'
 gem 'pusher'
 
 gem 'fog'
+
+gem 'dotenv-rails'
+gem 'unicorn'
+
+gem 'therubyracer', platforms: :ruby
