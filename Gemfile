@@ -56,8 +56,10 @@ end
 
 group :development do
   gem 'letter_opener_web'
-  gem 'dotenv-rails'
 end
+
+# 本番環境でも使用する
+gem 'dotenv-rails'
 
 gem 'jquery-turbolinks'
 
