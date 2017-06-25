@@ -5,7 +5,7 @@ class BlogsController < ApplicationController
   def index
     @blogs = Blog.all
   end
-  
+
   def show
     # 入力フォーム用
     @comment = @blog.comments.build
@@ -25,7 +25,7 @@ class BlogsController < ApplicationController
 
   def edit
   end
-  
+
   # 処理呼び出し用メソッド
   def create
     @blog = Blog.new(blogs_params)
@@ -37,36 +37,35 @@ class BlogsController < ApplicationController
       render 'new'
     end
   end
-  
+
   def update
     if @blog.update(blogs_params)
       redirect_to blogs_path, notice: "ブログを編集しました!"
-      raise
     else
       render 'edit'
     end
   end
-  
+
   def destroy
     # インスタンス変数に代入するのはなぜか
     # 普通の変数ではダメなのか
     @blog.destroy
     redirect_to blogs_path, notice: "ブログを削除しました!"
   end
-  
+
   def confirm
     @blog = Blog.new(blogs_params)
     render :new if @blog.invalid?
   end
- 
+
  private
- 
+
  def blogs_params
    # 必要なパラメータのみを安全に切り取る
    # それがストロングパラメータ
    params.require(:blog).permit(:title, :content)
  end
- 
+
  def set_blog
    @blog = Blog.find(params[:id])
  end
