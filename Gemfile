@@ -80,9 +80,9 @@ gem 'rmagick'
 
 gem 'pusher'
 
-# gem 'fog'
+gem 'fog'
 
 gem 'dotenv-rails'
-# gem 'unicorn'
+gem 'unicorn'
 
 gem 'therubyracer', platforms: :ruby
